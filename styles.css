@@ -667,6 +667,7 @@ form textarea{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
 .community-container h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
@@ -1007,12 +1008,12 @@ form textarea{
 /* LOGO Responsive Design for Small Screens */
 @media (max-width: 768px) {
     .logo {
-        font-size: 10px; /* Reduce the logo size for small screens */
+        font-size: 10px;
     }
 
     .global {
-        font-size: 7px; /* Further reduce the size of the global text */
-        margin-top: -3px; /* Further reduce the margin to decrease the gap */
+        font-size: 7px; 
+        margin-top: -3px; 
         letter-spacing: 3.3px;
     }
 }
@@ -1054,11 +1055,35 @@ form textarea{
 
 @media(max-width: 480px) {
     .dropdown {
-        font-size: 0.75rem; /* Smaller font size for mobile devices */
+        font-size: 0.75rem; 
     }
 
     .dropdown li a {
-        padding: 6px 8px; /* Smaller padding for mobile devices */
+        padding: 6px 8px; 
+    }
+}
+
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    #community {
+        padding: 20px 7%;
+    }
+
+    #community h2 {
+        font-size: 1.3rem;
+    }
+
+    #community p {
+        font-size: 0.7rem; 
+    }
+
+    .community-container h3 {
+        font-size: 1.3rem; /* Reduce subheading size for mobile */
+    }
+
+    .community-container li {
+        font-size: 0.85rem; /* Further reduce list item size for mobile */
     }
 }
 
@@ -1071,25 +1096,53 @@ form textarea{
     }
 
     .row img {
-        height: 150px; /* Reduce image height for smaller screens */
+        height: 150px; 
     }
 
     .layer h5 {
-        font-size: 12px; /* Reduce font size for equipment names */
+        font-size: 12px;
     }
 
     .layer p {
-        font-size: 14px; /* Reduce font size for equipment descriptions */
+        font-size: 14px;
         display: none;
     }
 
     .about-text p {
-        font-size: 0.9rem; /* Adjust paragraph font size in the About section */
-        line-height: 1.5; /* Adjust line-height for better readability */
-    }
+        font-size: 0.9rem;
+        line-height: 1.5; 
+    }           
 
     .home-text p {
-        font-size: 1rem; /* Adjust font size in the home section */
+        font-size: 1rem; 
         line-height: 1.5; /* Adjust line-height for better readability */
+    }
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    section {
+        padding: 20px 10%; /* Further reduce padding for all sections on small screens */
+    }
+
+    #home {
+        padding: 20px 10%; /* Adjust padding for Home section on mobile */
+    }
+
+    #about {
+        padding: 20px 10%; /* Adjust padding for About section on mobile */
+    }
+
+    #community {
+        padding: 20px 10%; /* Adjust padding for Community section on mobile */
+    }
+
+    #services {
+        padding: 20px 10%; /* Adjust padding for Services section on mobile */
+    }
+
+    #contact {
+        padding: 20px 10%; /* Adjust padding for Contact section on mobile */
     }
 }
