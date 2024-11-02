@@ -1091,12 +1091,12 @@ form textarea{
 @media (max-width: 768px) {
     .product-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Adjust the size of the columns */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust the size of the columns */
         gap: 1rem; /* Reduce the gap between items */
     }
 
     .row img {
-        height: 130px; 
+        height: 150px; 
     }
 
     .layer h5 {
@@ -1120,62 +1120,56 @@ form textarea{
 }
 
 
-
-
-/* Compressed Footer Styles for Small Screens */
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    footer {
-        background-color: #333; /* Set background color */
-        color: #fff; /* Set text color */
-        padding: 15px 10%; /* Reduced padding for a more compact footer */
-        text-align: center; /* Center text */
-        font-size: 0.9rem; /* Slightly smaller font size */
+    section {
+        padding: 20px 10%; /* Further reduce padding for all sections on small screens */
     }
 
-    /* Footer Links */
-    footer a {
-        color: #fff; /* Set link color */
-        text-decoration: none; /* Remove underline from links */
-        margin: 0 5px; /* Space between links */
-        display: inline-block; /* Ensure links are inline */
-        font-size: 0.9rem; /* Smaller font size for links */
+    #home {
+        padding: 20px 10%; /* Adjust padding for Home section on mobile */
     }
 
-    .footer-center {
-        display: inline;
-        flex: 1; /* Allow each section to grow equally */
-        min-width: 1px; /* Minimum width for each section */
-        margin: 1px; /* Margin around each section */
-        text-align: center; /* Center text within sections */
-        padding:10px 20%;
+    #about {
+        padding: 20px 10%; /* Adjust padding for About section on mobile */
     }
 
-    .footer-container {
-        display: flex; /* Use flexbox to arrange footer sections in a row */
-        flex-wrap: wrap; /* Allow sections to wrap if necessary */
-        justify-content: space-between; /* Space sections evenly */
-        padding: 10px 0; 
+    #community {
+        padding: 20px 10%; /* Adjust padding for Community section on mobile */
     }
 
-    footer a:hover {
-        text-decoration: underline; /* Underline on hover */
+    #services {
+        padding: 20px 10%; /* Adjust padding for Services section on mobile */
     }
 
-    /* Footer Content */
+    #contact {
+        padding: 20px 10%; /* Adjust padding for Contact section on mobile */
+    }
+}
+/* Additional Media Queries for Larger Screens */
+@media (max-width: 992px) {
+    .product-content {
+        grid-template-columns: repeat(2, 1fr); /* Three products per row */
+    }
+}
+
+@media (max-width: 1200px) {
+    .product-content {
+        grid-template-columns: repeat(2, 1fr); /* Four products per row */
+    }
+}
+
+
+@media (max-width: 480px) {
     .footer-content {
-        margin-bottom: 10px; /* Reduced space above footer content */
-        font-size: 0.7rem;
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: center;
     }
-    
-    
-    .footer-logo {
-        margin-bottom: 5px; /* Reduced space below logo */
-        max-width: 100px; /* Limit logo size for compactness */
+    .footer-center {
+        margin-bottom: 1rem; /* Add space between footer sections */
     }
-
-    /* Copyright Section */
-    .footer-copyright {
-        font-size: 0.8rem; 
-        margin-top: 5px;
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* Make form inputs full-width */
     }
 }
