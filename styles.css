@@ -1012,8 +1012,8 @@ form textarea{
 
     .global {
         font-size: 7px; /* Further reduce the size of the global text */
-        margin-top: -5px; /* Further reduce the margin to decrease the gap */
-        letter-spacing: 3.5px;
+        margin-top: -3px; /* Further reduce the margin to decrease the gap */
+        letter-spacing: 3.3px;
     }
 }
 
@@ -1066,20 +1066,21 @@ form textarea{
 @media (max-width: 768px) {
     .product-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the size of the columns */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust the size of the columns */
         gap: 1rem; /* Reduce the gap between items */
     }
 
     .row img {
-        height: 200px; /* Reduce image height for smaller screens */
+        height: 150px; /* Reduce image height for smaller screens */
     }
 
     .layer h5 {
-        font-size: 18px; /* Reduce font size for equipment names */
+        font-size: 12px; /* Reduce font size for equipment names */
     }
 
     .layer p {
         font-size: 14px; /* Reduce font size for equipment descriptions */
+        display: none;
     }
 
     .about-text p {
