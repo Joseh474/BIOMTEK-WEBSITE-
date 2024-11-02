@@ -56,7 +56,7 @@ header {
 
 .logo {
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     text-align: center; 
     display: inline-block; 
@@ -74,11 +74,11 @@ header {
 
 
 .global {
-    font-size: 15px; 
+    font-size: 12px; 
     color: #152AE7; 
     font-weight: normal; 
     display: block; 
-    margin-top: -5px; 
+    margin-top: -9px; 
     letter-spacing: 6px;
 }
 
@@ -122,8 +122,9 @@ span {
 
 header.sticky {
     background: var(--second-bg-color);
-    border-bottom: 1px solid #ffffff1a;
+    border-bottom:  solid #ffffff1a;
     padding: 12px 15%;
+    
 }
 
 .dropdown-menu {
@@ -316,7 +317,7 @@ section{
 
 
 
-.button {
+.btton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,13 +327,13 @@ section{
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 28px;
+    display: inline-flexbox;
+    padding: 5px 13px;
     background: var(--main-color);
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
     font-weight: 600;
     transition: all .45s ease;
     
@@ -385,6 +386,8 @@ header.sticky {
     line-height: 1.8;
     margin-bottom: 4rem;
     font-weight: 600;
+    letter-spacing: 0.1px;
+    word-spacing: 0.3px;
 }
 
 .contact{
@@ -1000,6 +1003,20 @@ form textarea{
     }
 }
 
+
+/* LOGO Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 10px; /* Reduce the logo size for small screens */
+    }
+
+    .global {
+        font-size: 7px; /* Further reduce the size of the global text */
+        margin-top: -5px; /* Further reduce the margin to decrease the gap */
+        letter-spacing: 3.5px;
+    }
+}
+
 @media(max-width: 768px) {
     .home::before {
         border-right-width: 80vw;
@@ -1042,5 +1059,36 @@ form textarea{
 
     .dropdown li a {
         padding: 6px 8px; /* Smaller padding for mobile devices */
+    }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .product-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the size of the columns */
+        gap: 1rem; /* Reduce the gap between items */
+    }
+
+    .row img {
+        height: 200px; /* Reduce image height for smaller screens */
+    }
+
+    .layer h5 {
+        font-size: 18px; /* Reduce font size for equipment names */
+    }
+
+    .layer p {
+        font-size: 14px; /* Reduce font size for equipment descriptions */
+    }
+
+    .about-text p {
+        font-size: 0.9rem; /* Adjust paragraph font size in the About section */
+        line-height: 1.5; /* Adjust line-height for better readability */
+    }
+
+    .home-text p {
+        font-size: 1rem; /* Adjust font size in the home section */
+        line-height: 1.5; /* Adjust line-height for better readability */
     }
 }
