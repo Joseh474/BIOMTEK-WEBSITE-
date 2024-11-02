@@ -1091,12 +1091,12 @@ form textarea{
 @media (max-width: 768px) {
     .product-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust the size of the columns */
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Adjust the size of the columns */
         gap: 1rem; /* Reduce the gap between items */
     }
 
     .row img {
-        height: 150px; 
+        height: 130px; 
     }
 
     .layer h5 {
@@ -1120,32 +1120,6 @@ form textarea{
 }
 
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    section {
-        padding: 20px 10%; /* Further reduce padding for all sections on small screens */
-    }
-
-    #home {
-        padding: 20px 10%; /* Adjust padding for Home section on mobile */
-    }
-
-    #about {
-        padding: 20px 10%; /* Adjust padding for About section on mobile */
-    }
-
-    #community {
-        padding: 20px 10%; /* Adjust padding for Community section on mobile */
-    }
-
-    #services {
-        padding: 20px 10%; /* Adjust padding for Services section on mobile */
-    }
-
-    #contact {
-        padding: 20px 10%; /* Adjust padding for Contact section on mobile */
-    }
-}
 
 
 /* Compressed Footer Styles for Small Screens */
