@@ -1146,3 +1146,62 @@ form textarea{
         padding: 20px 10%; /* Adjust padding for Contact section on mobile */
     }
 }
+
+
+/* Compressed Footer Styles for Small Screens */
+@media (max-width: 768px) {
+    footer {
+        background-color: #333; /* Set background color */
+        color: #fff; /* Set text color */
+        padding: 15px 10%; /* Reduced padding for a more compact footer */
+        text-align: center; /* Center text */
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    /* Footer Links */
+    footer a {
+        color: #fff; /* Set link color */
+        text-decoration: none; /* Remove underline from links */
+        margin: 0 5px; /* Space between links */
+        display: inline-block; /* Ensure links are inline */
+        font-size: 0.9rem; /* Smaller font size for links */
+    }
+
+    .footer-center {
+        display: inline;
+        flex: 1; /* Allow each section to grow equally */
+        min-width: 1px; /* Minimum width for each section */
+        margin: 1px; /* Margin around each section */
+        text-align: center; /* Center text within sections */
+        padding:10px 20%;
+    }
+
+    .footer-container {
+        display: flex; /* Use flexbox to arrange footer sections in a row */
+        flex-wrap: wrap; /* Allow sections to wrap if necessary */
+        justify-content: space-between; /* Space sections evenly */
+        padding: 10px 0; 
+    }
+
+    footer a:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
+
+    /* Footer Content */
+    .footer-content {
+        margin-bottom: 10px; /* Reduced space above footer content */
+        font-size: 0.7rem;
+    }
+    
+    
+    .footer-logo {
+        margin-bottom: 5px; /* Reduced space below logo */
+        max-width: 100px; /* Limit logo size for compactness */
+    }
+
+    /* Copyright Section */
+    .footer-copyright {
+        font-size: 0.8rem; 
+        margin-top: 5px;
+    }
+}
