@@ -926,15 +926,16 @@ form textarea{
 @media(max-width: 1100px) {
     :root {
         --big-font: 4rem;
-        --h2-font: 2.5rem;
-        --p-font: 1rem;
+        --h2-font: i.5rem;
+        --p-font: 0.6rem;
         transition: .1s;
     }
     .home-text h3 {
-        font-size: 2.5rem;
+        font-size: 0.7rem;
     }
     .home {
-        height: 87vh;
+        height: 100vh;
+       
     }
 }
 
@@ -948,7 +949,9 @@ form textarea{
     }
 
     .home-text {
-        padding-right: 75vw;
+        padding-right: 100vw;
+        font-size: 6rem;
+        font-weight: 200;
     }
 }
 
@@ -1171,5 +1174,64 @@ form textarea{
     .contact-form input,
     .contact-form textarea {
         width: 100%; /* Make form inputs full-width */
+    }
+}
+
+/* Sidebar styles for smaller screens */
+@media (max-width: 768px) {
+    .navlist {
+       
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 50%;
+        width: 250px;
+        background-color: var(--second-bg-color);
+        z-index: 1000;
+        padding-top: 40px;
+        transform: translateX(-100%); /* Start hidden on the left */
+        transition: transform 0.3s ease;
+        top: 40px; /* Start below the logo */
+        
+        height: calc(100% - 40px); 
+    }
+
+    /* Display the menu icon on smaller screens */
+    #menu-icon {
+        display: block;
+    }
+
+    /* Active sidebar styling */
+    .navlist.active {
+        display: flex;
+        transform: translateX(0); /* Slide in from the left */
+    }
+
+    /* Reduce spacing between list items */
+    .navlist li {
+        margin: 0.1px 0; 
+        padding: 0.1px 7px; 
+    }
+
+    .navlist a {
+        font-size: 14px; 
+        padding: 2px 15px; 
+        width: 100%; 
+    }
+
+    /* Keep specific items at the top of the sidebar */
+    .navlist li:first-child,
+    .navlist li:nth-child(4),
+    .navlist li:nth-child(5) {
+        order: -1;
+    }
+}
+
+/* Smaller screens (phones) */
+@media (max-width: 576px) {
+   
+    .navlist {
+        width: 200px;
     }
 }
