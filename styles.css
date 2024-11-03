@@ -853,7 +853,6 @@ form textarea{
     color: var(--primary-color);
 }
 
-
 /* Responsive Design */
 @media (max-width: 1280px) {
     header {
@@ -886,7 +885,6 @@ form textarea{
     }
 }
 
-
 /* Existing Media Queries */
 @media (max-width: 768px) {
     .owl-carousel .item {
@@ -898,11 +896,11 @@ form textarea{
     }
 
     p {
-        font-size: 0.9rem;
+        font-size: 0.5rem; /* Adjusted font size for paragraphs */
     }
 
     h2 {
-        font-size: 1rem;
+        font-size: 1rem; /* Keep heading sizes */
     }
 }
 
@@ -926,7 +924,7 @@ form textarea{
 @media(max-width: 1100px) {
     :root {
         --big-font: 4rem;
-        --h2-font: i.5rem;
+        --h2-font: 1.5rem; /* Fix typo from 'i.5rem' to '1.5rem' */
         --p-font: 0.6rem;
         transition: .1s;
     }
@@ -935,7 +933,6 @@ form textarea{
     }
     .home {
         height: 100vh;
-       
     }
 }
 
@@ -992,7 +989,7 @@ form textarea{
     .navlist a {
         display: block;
         margin: 17px;
-        font-size: 20px;
+        font-size: 0.5rem; /* Adjusted font size for links */
         transition: all .45s ease;
         color: var(--text-color);
     }
@@ -1006,7 +1003,6 @@ form textarea{
         top: 100%;
     }
 }
-
 
 /* LOGO Responsive Design for Small Screens */
 @media (max-width: 768px) {
@@ -1038,7 +1034,7 @@ form textarea{
 /* Dropdown Media Queries */
 @media(max-width: 768px) {
     .dropdown {
-        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        font-size: 0.5 rem; /* Adjusted font size for dropdowns */
     }
  
     .dropdown li a {
@@ -1048,7 +1044,7 @@ form textarea{
 
 @media(max-width: 640px) {
     .dropdown {
-        font-size: 0.8rem; /* Further adjust font size for even smaller screens */
+        font-size: 0.5rem; /* Adjusted font size for dropdowns */
     }
 
     .dropdown li a {
@@ -1058,14 +1054,13 @@ form textarea{
 
 @media(max-width: 480px) {
     .dropdown {
-        font-size: 0.75rem; 
+        font-size: 0.5rem; /* Adjusted font size for dropdowns */
     }
 
     .dropdown li a {
         padding: 6px 8px; 
     }
 }
-
 
 /* Responsive Design for Small Screens */
 @media (max-width: 768px) {
@@ -1078,7 +1073,7 @@ form textarea{
     }
 
     #community p {
-        font-size: 0.7rem; 
+        font-size: 0.5rem; /* Adjusted font size for paragraphs */
     }
 
     .community-container h3 {
@@ -1086,7 +1081,7 @@ form textarea{
     }
 
     .community-container li {
-        font-size: 0.85rem; /* Further reduce list item size for mobile */
+        font-size: 0.5rem; /* Adjusted font size for list items */
     }
 }
 
@@ -1107,21 +1102,20 @@ form textarea{
     }
 
     .layer p {
-        font-size: 14px;
+        font-size: 0.5rem; /* Adjusted font size for paragraphs */
         display: none;
     }
 
     .about-text p {
-        font-size: 0.9rem;
+        font-size: 0.5rem; /* Adjusted font size for paragraphs */
         line-height: 1.5; 
     }           
 
     .home-text p {
-        font-size: 1rem; 
+        font-size: 0.5rem; /* Adjusted font size for paragraphs */
         line-height: 1.5; /* Adjust line-height for better readability */
     }
 }
-
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
@@ -1149,6 +1143,7 @@ form textarea{
         padding: 20px 10%; /* Adjust padding for Contact section on mobile */
     }
 }
+
 /* Additional Media Queries for Larger Screens */
 @media (max-width: 992px) {
     .product-content {
@@ -1161,7 +1156,6 @@ form textarea{
         grid-template-columns: repeat(2, 1fr); /* Four products per row */
     }
 }
-
 
 @media (max-width: 480px) {
     .footer-content {
@@ -1208,14 +1202,14 @@ form textarea{
         transform: translateX(0); /* Slide in from the left */
     }
 
-    /* Reduce spacing between list items */
+ /* Reduce spacing between list items */
     .navlist li {
         margin: 0.1px 0; 
         padding: 0.1px 7px; 
     }
 
     .navlist a {
-        font-size: 14px; 
+        font-size: 0.5rem; /* Adjusted font size for links */
         padding: 2px 15px; 
         width: 100%; 
     }
