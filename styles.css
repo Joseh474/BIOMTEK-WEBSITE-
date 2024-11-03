@@ -1033,8 +1033,16 @@ form textarea{
 
 /* Dropdown Media Queries */
 @media(max-width: 768px) {
+
+    
+.dropdown-menu {
+    position: relative; /* Ensure the dropdown is positioned relative to the parent */
+}
+
     .dropdown {
         font-size: 0.5 rem; /* Adjusted font size for dropdowns */
+        left: 10%;
+        
     }
  
     .dropdown li a {
@@ -1112,7 +1120,7 @@ form textarea{
     }           
 
     .home-text p {
-        font-size: 0.5rem; /* Adjusted font size for paragraphs */
+        font-size: 1.1rem; /* Adjusted font size for paragraphs */
         line-height: 1.5; /* Adjust line-height for better readability */
     }
 }
