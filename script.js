@@ -135,6 +135,57 @@ function loadMoreContent() {
 // Scroll Reveal Effect
 const reveals = document.querySelectorAll('.reveal');
 
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+// button click event
+document.querySelector('.contact-btn').addEventListener('click', function() {
+
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Thank you for your interest! We will get back to you shortly.</p>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Close the modal when the close button is clicked
+    modal.querySelector('.close-button').addEventListener('click', function() {
+        modal.remove();
+    });
+
+    // Close the modal when clicking outside of the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.remove();
+        }
+    });
+});
+
 
 
 
