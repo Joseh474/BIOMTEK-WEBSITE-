@@ -291,6 +291,10 @@ section{
     
 }
 
+h2{
+    color: #152AE7;
+}
+
 
 .reveal {
     opacity: 0;
@@ -368,6 +372,7 @@ section{
     transform: scale(1);
 }
 
+
 .bttn {
     display: inline-block;
     margin: 5px;
@@ -400,9 +405,6 @@ section{
     z-index: 1000; /* Ensure it appears above other content */
     transition: opacity 0.5s ease; /* Fade out effect */
 }
-
-
-
 .btn:hover {
     transform: translateY(-2px); /* Lift effect */
     box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
@@ -575,25 +577,15 @@ form textarea{
 }
 .product-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-items: center;
-    gap: 2.5rem;
-    margin-top: 5rem;
+    gap: 1rem; /* Smaller gap for compact layout */
+    margin-top: 2rem;
+    padding: 0 10px;
 }
 
 .product-container {
     position: relative;
-}
-
-.info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -601,15 +593,16 @@ form textarea{
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    width: 100%;
-    height: auto; /* Change to auto to accommodate the new content */
     display: flex;
-    flex-direction: column; /* Stack the image and info vertically */
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8; /* Light background for each item */
+    padding: 10px;
 }
 
 .row img {
     width: 100%;
-    height: 400px; /*    Maintain aspect ratio */
+    height: 200px; /* Adjust as needed for image height */
     border-radius: 8px;
     display: block;
     transition: transform 0.5s;
@@ -630,35 +623,30 @@ form textarea{
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 40px;
-    transition: height 1s;
+    padding: 0 20px;
+    transition: height 0.5s;
 }
 
 .layer h5 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 15px;
-    color: cornsilk;
+    margin-bottom: 8px;
+    color: #fff;
 }
 
 .layer p {
-    columns: var(--second-color);
-    font-size: 1rem;
-    line-height: 1.8;
-    color: cornsilk;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #fff;
 }
 
-.layer i {
-    color: var(--main-color);
-    margin-top: 20px;
-    font-size: 20px;
-    background: var(--text-color);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+.layer a {
+    background: #28a745; /* WhatsApp green */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
 }
 
 .row:hover img {
@@ -666,40 +654,33 @@ form textarea{
 }
 
 .row:hover .layer {
-    height: 100%;
+    height: 100%; /* Show overlay on hover */
 }
 
-.row:hover img {
-    transform: scale(1.1);
-}
-
-.row:hover .layer {
-    height: 100%;
-}
 
 /* Services Section Styles */
 .services {
-    padding: 60px 15%; /* Padding for the section */
-    background-color: var(--second-bg-color); /* Background color */
+    padding: 60px 15%; 
+    background-color: var(--second-bg-color); 
 }
 
 .services h2 {
-    font-size: var(--h2-font); /* Font size for the section heading */
-    color: var(--text-color); /* Text color */
-    margin-bottom: 20px; /* Space below the heading */
-    text-align: center; /* Center the heading */
+    font-size: var(--h2-font); 
+    color: var(--text-color); 
+    margin-bottom: 20px;
+    text-align: center; 
 }
 
 .maintenance-services {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between items */
-    margin-top: 30px; /* Space above the content */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-top: 30px;
 }
 
 .text-content {
-    flex: 1; /* Allow text content to take available space */
-    margin-right: 20px; /* Space between text and image */
+    flex: 1; 
+    margin-right: 20px; 
 }
 
 .text-content h3 {
