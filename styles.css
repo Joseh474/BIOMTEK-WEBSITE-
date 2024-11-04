@@ -368,9 +368,10 @@ section{
     transform: scale(1);
 }
 
-
 .bttn {
-    padding: 5px 20px;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
     background: var(--main-color);
     border-radius: 5px;
     color: var(--text-color);
@@ -385,6 +386,23 @@ section{
 .bttn:hover::after {
     transform: scale(1);
 }
+
+.custom-alert {
+    position: absolute;
+    top: 20px; /* Position from the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center the alert */
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    padding: 15px;
+    border: 1px solid #f5c6cb; /* Border color */
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: opacity 0.5s ease; /* Fade out effect */
+}
+
+
+
 .btn:hover {
     transform: translateY(-2px); /* Lift effect */
     box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
