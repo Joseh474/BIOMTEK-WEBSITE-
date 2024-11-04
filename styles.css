@@ -184,7 +184,7 @@ section{
     height: 100vh;
     width: 100%;
     background-color: var(--bg-color); 
-    background-image: url('IMAGES/EQUIPMENTS/backg.jpg'); 
+    background-image: url('bckgrd.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-blend-mode: overlay; 
@@ -203,7 +203,7 @@ section{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(123, 128, 187, 0.8);
+  background-color: rgba(123, 128, 187, 0.5);
   z-index: 1;
   }
 
@@ -272,6 +272,15 @@ section{
     animation-delay: 0.5s; 
 }
 
+@keyframes backgroundAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
 
 
 @keyframes typing {
@@ -315,9 +324,19 @@ section{
     font-weight: 700;
 }
 
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bckgrd.jpg') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: 0;
+    animation: backgroundAnimation 20s infinite alternate;
+}
 
-
-.btton {
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,25 +345,63 @@ section{
 
 }
 
+.button-container {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+
 .btn {
-    display: inline-flexbox;
-    padding: 5px 13px;
+    padding: 10px 20px;
     background: var(--main-color);
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;
     letter-spacing: 0.3px;
     font-weight: 600;
-    transition: all .45s ease;
-    
+    transition: all 0.45s ease;
+    position: relative; /* For pseudo-element positioning */
+    gap: 40px; /* Space between buttons */
 }
 
-.btn:hover {
-    transform: scale(0.8);
-    box-shadow: 0 0 5px var(--main-color),
-                0 0 25px var(--main-color), 0 0 50px var(--main-color),
-                0 0 100px var(--main-color), 0 0 200px var(--main-color);
+.btn:hover::after {
+    transform: scale(1);
+}
 
+
+.bttn {
+    padding: 5px 20px;
+    background: var(--main-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    transition: all 0.45s ease;
+    position: relative; /* For pseudo-element positioning */
+    gap: 40px; /* Space between buttons */
+}
+
+.bttn:hover::after {
+    transform: scale(1);
+}
+.btn:hover {
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: 1; /* Place above the button */
 }
 
 
@@ -384,7 +441,7 @@ header.sticky {
     color:black;
     font-size: 1.1rem; /* Adjusted for consistency */
     line-height: 1.8;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-weight: 600;
     letter-spacing: 0.1px;
     word-spacing: 0.3px;
@@ -602,43 +659,96 @@ form textarea{
     height: 100%;
 }
 
-
-#services {
-    padding: 70px 15%;
-    
+/* Services Section Styles */
+.services {
+    padding: 60px 15%; /* Padding for the section */
+    background-color: var(--second-bg-color); /* Background color */
 }
 
+.services h2 {
+    font-size: var(--h2-font); /* Font size for the section heading */
+    color: var(--text-color); /* Text color */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+}
 
-.services-container {
+.maintenance-services {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items */
+    margin-top: 30px; /* Space above the content */
+}
+
+.text-content {
+    flex: 1; /* Allow text content to take available space */
+    margin-right: 20px; /* Space between text and image */
+}
+
+.text-content h3 {
+    font-size: 2rem; /* Font size for the subheading */
+    color: var(--text-color); /* Text color */
+    margin-bottom: 15px; /* Space below the subheading */
+}
+
+.text-content p {
+    font-size: var(--p-font); /* Font size for paragraphs */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 15px; /* Space below each paragraph */
+}
+
+.contact-btn {
+    padding: 10px 20px; /* Padding for the button */
+    background-color: var(--main-color); /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.contact-btn:hover {
+    background-color: var(--second-main-color); /* Change background on hover */
+}
+
+.image-content {
+    flex: 1; /* Allow image content to take available space */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the image */
+}
+
+.image-content img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.modal {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
 }
 
-.service {
-    display: flex;
-    align-items: flex-start; /* Align items to the start */
-    margin-bottom: 4px; /* Space between each service */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px; /* Adjust width as needed */
 }
 
-.service.left {
-    flex-direction: row; /* Image on the left, text on the right */
-}
-
-.service.right {
-    flex-direction: row; 
-}
-
-.service img {
-    width: 40%; 
-    margin: 0 20px; 
-}
-
-.service h3 {
-    margin: 0 0 10px;/
-}
-
-.service p {
-    margin: 0; 
+.close-button {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 #community {
@@ -1136,7 +1246,7 @@ form textarea{
     }
 
     #about {
-        padding: 20px 10%; /* Adjust padding for About section on mobile */
+        padding: 10px 10%; /* Adjust padding for About section on mobile */
     }
 
     #community {
@@ -1155,13 +1265,13 @@ form textarea{
 /* Additional Media Queries for Larger Screens */
 @media (max-width: 992px) {
     .product-content {
-        grid-template-columns: repeat(2, 1fr); /* Three products per row */
+        grid-template-columns: repeat(3, 1fr); /* Three products per row */
     }
 }
 
 @media (max-width: 1200px) {
     .product-content {
-        grid-template-columns: repeat(2, 1fr); /* Four products per row */
+        grid-template-columns: repeat(3, 1fr); /* Four products per row */
     }
 }
 
@@ -1192,9 +1302,9 @@ form textarea{
         background-color: var(--second-bg-color);
         z-index: 1000;
         padding-top: 40px;
-        transform: translateX(-100%); /* Start hidden on the left */
+        transform: translateX(-100%); 
         transition: transform 0.3s ease;
-        top: 40px; /* Start below the logo */
+        top: 40px;  
         
         height: calc(100% - 40px); 
     }
@@ -1207,7 +1317,7 @@ form textarea{
     /* Active sidebar styling */
     .navlist.active {
         display: flex;
-        transform: translateX(0); /* Slide in from the left */
+        transform: translateX(0); 
     }
 
  /* Reduce spacing between list items */
@@ -1217,7 +1327,7 @@ form textarea{
     }
 
     .navlist a {
-        font-size: 0.5rem; /* Adjusted font size for links */
+        font-size: 0.5rem;
         padding: 2px 15px; 
         width: 100%; 
     }
@@ -1237,3 +1347,158 @@ form textarea{
         width: 200px;
     }
 }
+
+
+/* Base Styles for Services Section */
+.services {
+    padding: 60px 15%; 
+    background-color: var(--second-bg-color); 
+}
+
+.services h2 {
+    font-size: var(--h2-font); 
+    color: var(--text-color); 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.maintenance-services {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items */
+    margin-top: 30px; /* Space above the content */
+}
+
+.text-content {
+    flex: 1; /* Allow text content to take available space */
+    margin-right: 20px; /* Space between text and image */
+}
+
+.text-content h3 {
+    font-size: 2rem; /* Font size for the subheading */
+    color: var(--text-color); /* Text color */
+    margin-bottom: 15px; /* Space below the subheading */
+}
+
+.text-content p {
+    font-size: var(--p-font); /* Font size for paragraphs */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 15px; /* Space below each paragraph */
+}
+
+.contact-btn {
+    padding: 10px 20px; /* Padding for the button */
+    background-color: var(--main-color); /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.contact-btn:hover {
+    background-color: var(--second-main-color); /* Change background on hover */
+}
+
+.image-content {
+    flex: 1; /* Allow image content to take available space */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the image */
+}
+
+.image-content img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+/* Media Queries */
+
+/* Styles for large tablets and small desktops */
+@media (max-width: 1200px) {
+    .services {
+        padding: 40px 10%; /* Adjust padding */
+    }
+
+    .maintenance-services {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .text-content {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add space below text */
+    }
+}
+
+/* Styles for tablets */
+@media (max-width: 992px) {
+    .services h2 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    .text-content h3 {
+        font-size: 1.5rem; /* Adjust subheading size */
+    }
+
+    .contact-btn {
+        padding: 8px 16px; /* Adjust button padding */
+    }
+}
+
+/* Styles for small tablets and large phones */
+@media (max-width: 768px) {
+    .services {
+        padding: 30px 5%; /* Adjust padding */
+    }
+
+    .services h2 {
+        font-size: 1.6rem; /* Further adjust heading size */
+    }
+
+    .text-content p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+    .contact-btn {
+        width: 100%; /* Make button full width */
+    }
+}
+
+/* Styles for phones */
+@media (max-width: 576px) {
+    .services {
+        padding: 20px 2%; /* Adjust padding */
+    }
+
+    .services h2 {
+        font-size: 1rem; /* Further adjust heading size */
+    }
+
+    .text-content h3 {
+        font-size: 0.85rem; /* Further adjust subheading size */
+    }
+
+    .text-content p {
+        font-size: 0.6rem; /* Further adjust paragraph font size */
+    }
+}
+
+/* Styles for very small phones */
+@media (max-width: 480px) {
+    .services {
+        padding: 15px 1%; /* Adjust padding */
+    }
+
+    .services h2 {
+        font-size: 1rem; /* Further adjust heading size */
+    }
+
+    .text-content h3 {
+        font-size: 0.85;
+    }
+
+    .text-content p{
+        font-size: 0.6rem;
+    }
+    }
