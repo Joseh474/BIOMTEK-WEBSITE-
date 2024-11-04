@@ -1388,6 +1388,7 @@ form textarea{
 
 .contact-btn {
     padding: 10px 20px; /* Padding for the button */
+    margin-top: 20px;
     background-color: var(--main-color); /* Button background color */
     color: #fff; /* Button text color */
     border: none; /* Remove border */
