@@ -178,6 +178,11 @@ document.querySelector('.contact-btn').addEventListener('click', function() {
         modal.remove();
     });
 
+    // Close the modal when scrolling
+    window.addEventListener('scroll', function() {
+        modal.remove();
+    });
+
     // Close the modal when clicking outside of the modal content
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
