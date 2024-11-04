@@ -191,8 +191,46 @@ document.querySelector('.contact-btn').addEventListener('click', function() {
     });
 });
 
+ // Function to show custom alert message
+ function showCustomAlert(button, message) {
+    // Create a custom alert div
+    const alertBox = document.createElement('div');
+    alertBox.classList.add('custom-alert');
+    alertBox.innerText = message;
 
+    // Get the button's position
+    const buttonRect = button.getBoundingClientRect();
+    const alertBoxHeight = alertBox.offsetHeight;
 
+    // Set the position of the alert box just above the button
+    alertBox.style.top = `${buttonRect.top + window.scrollY - alertBoxHeight}px`;
+    alertBox.style.left = `${buttonRect.left + window.scrollX}px`;
 
+    // Append the alert box to the body
+    document.body.appendChild(alertBox);
 
+    // Close the alert when scrolling
+    const closeAlertOnScroll = function() {
+        alertBox.remove(); // Remove the alert box on scroll
+        window.removeEventListener('scroll', closeAlertOnScroll); // Remove the scroll event listener
+    };
 
+    window.addEventListener('scroll', closeAlertOnScroll);
+
+    // Optional: Automatically remove the alert after a few seconds
+    setTimeout(() => {
+        alertBox.remove();
+        window.removeEventListener('scroll', closeAlertOnScroll); // Clean up the event listener
+    }, 5000); // Adjust the time as needed (5000ms = 5 seconds)
+}
+
+// Add event listeners to the buttons
+document.getElementById('professional-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    showCustomAlert(this, "Thank you for your interest. This service is coming soon."); // Show alert for Professional button
+});
+
+document.getElementById('student-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    showCustomAlert(this, "Thank you for your interest. This service is coming soon."); // Show alert for Student button
+});
