@@ -613,17 +613,25 @@ form textarea{
 .contact-btn:hover {
     background-color: var(--second-main-color);
 }
-.product-content {
+
+
+.product-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(350px, auto)) ;
     align-items: center;
-    gap: 1rem; /* Smaller gap for compact layout */
-    margin-top: 2rem;
-    padding: 0 10px;
+    gap:2.5rem;
+    margin-top: 5rem;
 }
 
-.product-container {
-    position: relative;
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -631,19 +639,19 @@ form textarea{
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
+    width: 100%;
+    height: auto; /* Change to auto to accommodate the new content */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f8f8f8; /* Light background for each item */
-    padding: 10px;
+    flex-direction: column; /* Stack the image and info vertically */
 }
 
 .row img {
     width: 100%;
-    height: 200px; /* Adjust as needed for image height */
+    height: 500px; /* Maintain aspect ratio */
+    border-radius: 8px;
     display: block;
     transition: transform 0.5s;
-  
+    object-fit: cover;
 }
 
 .layer {
@@ -660,30 +668,35 @@ form textarea{
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
-    transition: height 0.5s;
+    padding: 0 40px;
+    transition: height 1s;
 }
 
 .layer h5 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #fff;
+    margin-bottom: 15px;
+    color: cornsilk;
 }
 
 .layer p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #fff;
+    columns: var(--second-color);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: cornsilk;
 }
 
-.layer a {
-    background: #28a745; /* WhatsApp green */
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 5px;
-    margin-top: 10px;
-    text-decoration: none;
+.layer i {
+    color: var(--main-color);
+    margin-top: 20px;
+    font-size: 20px;
+    background: var(--text-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .row:hover img {
@@ -691,9 +704,20 @@ form textarea{
 }
 
 .row:hover .layer {
-    height: 100%; /* Show overlay on hover */
+    height: 100%;
 }
 
+.row:hover img {
+    transform: scale(1.1);
+}
+
+.row:hover .layer {
+    height: 100%;
+}
+
+#services {
+    padding: 20px;
+}
 
 /* Services Section Styles */
 .services {
@@ -831,6 +855,69 @@ form textarea{
     font-size: 0.95rem;
 }
 
+
+.services {
+    padding: 60px 15%; 
+    background-color: var(--second-bg-color); 
+}
+
+.services h2 {
+    font-size: var(--h2-font); 
+    color: var(--text-color); 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.maintenance-services {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.text-content {
+    flex: 1;  
+    margin-right: 20px; 
+}
+
+.text-content h3 {
+    font-size: 2rem;
+    color: var(--text-color); 
+    margin-bottom: 15px; 
+}
+
+.text-content p {
+    font-size: var(--p-font); 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+}
+
+.contact-btn {
+    padding: 10px 20px; 
+    margin-top: 20px;
+    background-color: var(--main-color); 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--second-main-color); /* Change background on hover */
+}
+
+.image-content {
+    flex: 1; /* Allow image content to take available space */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the image */
+}
+
+.image-content img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+}
 
 
 
@@ -1042,7 +1129,7 @@ form textarea{
     }
 
     p {
-        font-size: 0.5rem; /* Adjusted font size for paragraphs */
+        font-size: 0.5rem; 
     }
 
     h2 {
@@ -1227,7 +1314,7 @@ form textarea{
     }
 
     #community p {
-        font-size: 0.5rem; /* Adjusted font size for paragraphs */
+        font-size: 0.5rem; 
     }
 
     .community-container h3 {
@@ -1237,7 +1324,7 @@ form textarea{
     }
 
     .community-container li {
-        font-size: 0.5rem; /* Adjusted font size for list items */
+        font-size: 0.5rem; 
     }
 }
 
@@ -1245,8 +1332,8 @@ form textarea{
 @media (max-width: 768px) {
     .product-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust the size of the columns */
-        gap: 1rem; /* Reduce the gap between items */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem; /
     }
 
     .row img {
@@ -1258,45 +1345,45 @@ form textarea{
     }
 
     .layer p {
-        font-size: 0.5rem; /* Adjusted font size for paragraphs */
+        font-size: 0.5rem; 
         display: none;
     }
 
     .about-text p {
-        font-size: 0.5rem; /* Adjusted font size for paragraphs */
+        font-size: 0.5rem; 
         line-height: 1.5; 
     }           
 
     .home-text p {
-        font-size: 1.1rem; /* Adjusted font size for paragraphs */
-        line-height: 1.5; /* Adjust line-height for better readability */
+        font-size: 1.1rem; 
+        line-height: 1.5;
     }
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     section {
-        padding: 20px 10%; /* Further reduce padding for all sections on small screens */
+        padding: 20px 10%; 
     }
 
     #home {
-        padding: 20px 10%; /* Adjust padding for Home section on mobile */
+        padding: 20px 10%; 
     }
 
     #about {
-        padding: 10px 10%; /* Adjust padding for About section on mobile */
+        padding: 10px 10%; 
     }
 
     #community {
-        padding: 20px 10%; /* Adjust padding for Community section on mobile */
+        padding: 20px 10%;
     }
 
     #services {
-        padding: 20px 10%; /* Adjust padding for Services section on mobile */
+        padding: 20px 10%; 
     }
 
     #contact {
-        padding: 20px 10%; /* Adjust padding for Contact section on mobile */
+        padding: 20px 10%; 
     }
 }
 
@@ -1395,70 +1482,6 @@ form textarea{
 }
 
 
-/* Base Styles for Services Section */
-.services {
-    padding: 60px 15%; 
-    background-color: var(--second-bg-color); 
-}
-
-.services h2 {
-    font-size: var(--h2-font); 
-    color: var(--text-color); 
-    margin-bottom: 20px;
-    text-align: center; 
-}
-
-.maintenance-services {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between items */
-    margin-top: 30px; /* Space above the content */
-}
-
-.text-content {
-    flex: 1; /* Allow text content to take available space */
-    margin-right: 20px; /* Space between text and image */
-}
-
-.text-content h3 {
-    font-size: 2rem; /* Font size for the subheading */
-    color: var(--text-color); /* Text color */
-    margin-bottom: 15px; /* Space below the subheading */
-}
-
-.text-content p {
-    font-size: var(--p-font); /* Font size for paragraphs */
-    line-height: 1.6; /* Line height for readability */
-    margin-bottom: 15px; /* Space below each paragraph */
-}
-
-.contact-btn {
-    padding: 10px 20px; /* Padding for the button */
-    margin-top: 20px;
-    background-color: var(--main-color); /* Button background color */
-    color: #fff; /* Button text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Transition for hover effect */
-}
-
-.contact-btn:hover {
-    background-color: var(--second-main-color); /* Change background on hover */
-}
-
-.image-content {
-    flex: 1; /* Allow image content to take available space */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center the image */
-}
-
-.image-content img {
-    max-width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners for the image */
-}
-
 /* Media Queries */
 
 /* Styles for large tablets and small desktops */
@@ -1508,7 +1531,7 @@ form textarea{
     }
 
     .contact-btn {
-        width: 100%; /* Make button full width */
+        width: 100%; /* Make button full width */  
     }
 }
 
@@ -1549,3 +1572,6 @@ form textarea{
         font-size: 0.6rem;
     }
     }
+
+    
+    
