@@ -1572,6 +1572,20 @@ form textarea{
         font-size: 0.6rem;
     }
     }
+@media (max-width: 460px) {
+    .contact-icons {
+        flex-direction: column; /* Stack icons vertically */
+        align-items: center; /* Center align the icons */
+    }
+
+    .contact-icons i {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+        font-size: 18px; /* Adjust icon size */
+        height: 40px; /* Adjust height */
+        width: 40px; /* Adjust width */
+    }
+}
 
     
     
