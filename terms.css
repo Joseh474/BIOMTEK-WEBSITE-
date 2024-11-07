@@ -181,7 +181,9 @@ footer {
 .social-icons a:hover {
     color: var(--primary-color);
 }
-/* Small Screens (up to 400px) */
+
+
+/* Small Screens (up to 420px) */
 @media (max-width: 720px) {
     .container {
         max-width: 90%; /* Adjust container width */
@@ -189,19 +191,19 @@ footer {
     }
 
     h1 {
-        font-size: 1.1rem; /* Adjust heading size */
+        font-size: 1.9rem; /* Adjust heading size */
     }
 
     h2 {
-        font-size:0.8rem; /* Adjust subheading size */
+        font-size:1.3rem; /* Adjust subheading size */
     }
 
     li{
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
 
     p {
-        font-size: 0.6rem; /* Adjust paragraph size */
+        font-size: 1rem; /* Adjust paragraph size */
     }
 
     button {
@@ -211,7 +213,7 @@ footer {
 }
 
 /* Medium Screens (421px to 1028px) */
-@media (min-width: 421px) and (max-width: 720px) {
+@media (min-width: 380px) and (max-width: 720px) {
     .container {
         max-width: 90%; /* Adjust container width */
         padding: 30px; /* Adjust padding */
@@ -266,7 +268,7 @@ footer {
 }
 
 /* Extra Small Devices */
-@media (max-width: 420px) {
+@media (max-width: 400px) {
     .dialog-content {
         width: 90%;
         padding: 20px;
@@ -275,7 +277,7 @@ footer {
 }
 
 /* Small Devices */
-@media (min-width: 401px) and (max-width: 768px) {
+@media (min-width: 420px) and (max-width: 768px) {
     .dialog-content {
         width: 80%;
         padding: 30px;
