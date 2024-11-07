@@ -275,7 +275,7 @@ footer {
 }
 
 /* Small Devices */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 401px) and (max-width: 768px) {
     .dialog-content {
         width: 80%;
         padding: 30px;
