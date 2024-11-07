@@ -1,236 +1,204 @@
-// Sticky Header
+// Selectors
 const header = document.querySelector("header");
+const menu = document.querySelector('#menu-icon');
+const navlist = document.querySelector('.navlist');
+const communityButtons = document.querySelectorAll('.btn');
+const reveals = document.querySelectorAll('.reveal');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const dropdown = dropdownMenu.querySelector('.dropdown');
+const sliderTrack = document.querySelector('.slider-track');
+const products = [
+    {
+        name: "Operating Table",
+        images: ["OPERATING TABLE 2.jpg", "OPERATING TABLE 3.jpg", "OPERATING TABLE 4.jpg"],
+        description: "Used to position patients during surgical procedures",
+        price: "Contact for price"
+    },
+    {
+        name: "Operating Light",
+        images: ["OPERATING LIGHT.jpg", "OPERATING LIGHT 2.jpg"],
+        description: "Provides bright, shadow-free lighting for surgeons during operations",
+        price: "Contact for price"
+    },
+    // Add more products here
+];
 
-window.addEventListener("scroll", function () {
+// Sticky Header
+window.addEventListener("scroll", () => {
     header.classList.toggle("sticky", window.scrollY > 100);
 });
-// Menu Toggle
-let menu = document.querySelector('#menu-icon');
-let navlist = document.querySelector('.navlist');
 
+// Menu Toggle
 menu.onclick = () => {
-    menu.classList.toggle('bx-x'); // Toggles the icon
-    navlist.classList.toggle('active'); // Toggles the sidebar visibility
+    menu.classList.toggle('bx-x');
+    navlist.classList.toggle('active');
 };
 
 // Close menu on scroll
 window.onscroll = () => {
     menu.classList.remove('bx-x');
-    navlist.classList.remove('active'); // Ensures sidebar closes on scroll
+    navlist.classList.remove('active');
 };
 
 // Read More Functionality
-document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('click', function (event) {
-        // Check if the clicked element is not the "Read More" link or its parent
+document.addEventListener('DOMContentLoaded', () => {
+    const additionalContents = document.querySelectorAll('.additional-content');
+    
+    document.addEventListener('click', (event) => {
         if (!event.target.closest('.read')) {
-            // Hide all additional content
-            document.querySelectorAll('.additional-content').forEach(function (content) {
-                content.style.display = 'none';
-            });
+            additionalContents.forEach(content => content.style.display = 'none');
         }
     });
 
-    // Toggle visibility of additional content when "Read More" link is clicked
-    document.querySelectorAll('.read').forEach(function (readMoreLink) {
-        readMoreLink.addEventListener('click', function (event) {
+    document.querySelectorAll('.read').forEach(link => {
+        link.addEventListener('click', (event) => {
             event.preventDefault();
-            var additionalContent = this.nextElementSibling;
+            const additionalContent = link.nextElementSibling;
             additionalContent.style.display = additionalContent.style.display === 'none' ? 'block' : 'none';
         });
     });
 });
 
-
-
-
+// Add to Cart Functionality
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', () => {
-        const product = button.getAttribute('data-product'); // Get product name from data attribute
-        const price = parseFloat(button.getAttribute('data-price')); // Get price from data attribute
+        const product = button.dataset.product;
+        const price = parseFloat(button.dataset.price);
         addToCart(product, price);
         console.log(`${product} added to cart!`);
     });
 });
 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const communityButtons = document.querySelectorAll('.btn');
-
-    communityButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const buttonText = this.textContent; 
-            let message;
-
-           
-            switch (buttonText) {
-                case 'Visit Forums':
-                    message = 'You will be redirected to the forums.';
-                    break;
-                case 'View Events':
-                    message = 'Check out our upcoming events!';
-                    break;
-                case 'Explore Resources':
-                    message = 'Access a wealth of resources to enhance your knowledge.';
-                    break;
-                default:
-                    message = 'This feature is coming soon! Stay tuned.';
-            }
-
-            showAlert(message);
-        });
+// Community Button Alerts
+communityButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const messages = {
+            'Visit Forums': 'You will be redirected to the forums.',
+            'View Events': 'Check out our upcoming events!',
+            'Explore Resources': 'Access a wealth of resources to enhance your knowledge.',
+        };
+        showAlert(messages[button.textContent] || 'This feature is coming soon! Stay tuned.');
     });
 });
-
 
 // Fade-In Reveal Animation
-document.addEventListener("DOMContentLoaded", function() {
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active'); 
-                observer.unobserve(entry.target); 
-            }
-        });
-    });
-
-    reveals.forEach(reveal => {
-        observer.observe(reveal); // Observe each reveal element
-    });
-});
-
-
-
-    // drop down reveal  animation
-
-   
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    const dropdown = dropdownMenu.querySelector('.dropdown');
-
-    dropdownMenu.addEventListener('mouseenter', () => {
-        setTimeout(() => {
-            dropdown.style.display = 'block'; // Set display to block before measuring height
-            const height = dropdown.scrollHeight + 'px'; // Get the full height of the dropdown
-            dropdown.style.height = height; // Set the height to the measured height
-            dropdown.style.opacity = 1; // Set opacity to 1 for fade-in effect
-        }, 500); // Adjust the delay time here (300 ms)
-    });
-
-    dropdownMenu.addEventListener('mouseleave', () => {
-        dropdown.style.opacity = 0; // Fade out
-        dropdown.style.height = '0'; // Collapse height to 0
-        setTimeout(() => {
-            dropdown.style.display = 'none'; // Hide after transition
-        }, 500); // Match this timeout with the CSS transition duration
-    });
-
-
-function loadMoreContent() {
-    // Fetch and append new content
-}
-// Scroll Reveal Effect
-const reveals = document.querySelectorAll('.reveal');
-
-document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const callback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-    revealElements.forEach(element => {
-        observer.observe(element);
-    });
-});
-
-// button click event
-document.querySelector('.contact-btn').addEventListener('click', function() {
-
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Contact Us</h2>
-            <p>Thank you for your interest! We will get back to you shortly.</p>
-        </div>
-    `;
-    document.body.appendChild(modal);
-
-    // Close the modal when the close button is clicked
-    modal.querySelector('.close-button').addEventListener('click', function() {
-        modal.remove();
-    });
-
-    // Close the modal when scrolling
-    window.addEventListener('scroll', function() {
-        modal.remove();
-    });
-
-    // Close the modal when clicking outside of the modal content
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.remove();
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
         }
     });
 });
 
- // Function to show custom alert message
- function showCustomAlert(button, message) {
-    // Create a custom alert div
-    const alertBox = document.createElement('div');
-    alertBox.classList.add('custom-alert');
-    alertBox.innerText = message;
+reveals.forEach(reveal => revealObserver.observe(reveal));
 
-    // Get the button's position
-    const buttonRect = button.getBoundingClientRect();
-    const alertBoxHeight = alertBox.offsetHeight;
-
-    // Set the position of the alert box just above the button
-    alertBox.style.top = `${buttonRect.top + window.scrollY - alertBoxHeight}px`;
-    alertBox.style.left = `${buttonRect.left + window.scrollX}px`;
-
-    // Append the alert box to the body
-    document.body.appendChild(alertBox);
-
-    // Close the alert when scrolling
-    const closeAlertOnScroll = function() {
-        alertBox.remove(); // Remove the alert box on scroll
-        window.removeEventListener('scroll', closeAlertOnScroll); // Remove the scroll event listener
-    };
-
-    window.addEventListener('scroll', closeAlertOnScroll);
-
-    // Optional: Automatically remove the alert after a few seconds
+// Dropdown Reveal Animation
+dropdownMenu.addEventListener('mouseenter', () => {
     setTimeout(() => {
-        alertBox.remove();
-        window.removeEventListener('scroll', closeAlertOnScroll); // Clean up the event listener
-    }, 5000); // Adjust the time as needed (5000ms = 5 seconds)
+        dropdown.style.display = 'block';
+        const height = dropdown.scrollHeight + 'px';
+        dropdown.style.height = height;
+        dropdown.style.opacity = 1;
+    }, 500);
+});
+
+dropdownMenu.addEventListener('mouseleave', () => {
+    dropdown.style.opacity = 0;
+    dropdown.style.height = '0';
+    setTimeout(() => dropdown.style.display = 'none', 500);
+});
+
+// Modal Functionality
+function openModal(imgElement, productIndex) {
+    const modal = document.getElementById("imageModal");
+    const modalTitle = document.getElementById("modal-title");
+    const currentProduct = products[productIndex];
+
+    modal.style.display = "block";
+    modalTitle.textContent = currentProduct.name;
+
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = `
+        <button class="nav-btn prev-btn" onclick="changeImage(-1, ${productIndex})">❮</button>
+        <img id="modal-image" src="${imgElement.src}" alt="${currentProduct.name}">
+        <button class="nav-btn next-btn" onclick="changeImage(1, ${productIndex})">❯</button>
+    `;
+
+    currentImageIndex = currentProduct.images.indexOf(imgElement.src.split('/').pop());
+    toggleScrollLock();
 }
 
-// Add event listeners to the buttons
-document.getElementById('professional-btn').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    showCustomAlert(this, "Thank you for your interest. This service is coming soon."); // Show alert for Professional button
+function changeImage(direction, productIndex) {
+    const currentProduct = products[productIndex];
+    const modalImg = document.getElementById("modal-image");
+
+    currentImageIndex = (currentImageIndex + direction + currentProduct.images.length) % currentProduct.images.length;
+    modalImg.src = currentProduct.images[currentImageIndex];
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+    toggleScrollLock();
+}
+
+function toggleScrollLock() {
+    document.body.classList.toggle('scroll-lock');
+}
+
+// WhatsApp Functionality
+function openWhatsApp(productName) {
+    const message = `Hello, I'm interested in the ${productName}. Can you provide more information about its specifications and pricing?`;
+    window.open(`https://wa.me/+2547?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#contact"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
-document.getElementById('student-btn').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    showCustomAlert(this, "Thank you for your interest. This service is coming soon."); // Show alert for Student button
+// Tooltip Functionality
+document.querySelectorAll('.contact-social a').forEach(icon => {
+    const tooltip = document.createElement('span');
+    tooltip.className = 'tooltip';
+    tooltip.innerText = icon.classList[0].replace('icon-', '');
+    icon.appendChild(tooltip);
+
+    icon.addEventListener('mouseover', () => {
+        tooltip.style.opacity = 1;
+        tooltip.style.visibility = 'visible';
+    });
+
+    icon.addEventListener('mouseout', () => {
+        tooltip.style.opacity = 0;
+        tooltip.style.visibility = 'hidden';
+    });
 });
+
+// Slider Animation
+setInterval(() => {
+    sliderTrack.style.animation = 'none';
+    sliderTrack.offsetHeight; // Trigger reflow to restart animation
+    sliderTrack.style.animation = '';
+}, 10000); // Restart animation every 10 seconds
+
+// Function to show the modal with product details
+function showModal(imageSrc, productName, productDescription) {
+    const modal = document.getElementById("productModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
+    const modalDescription = document.getElementById("modalDescription");
+
+    modal.style.display = "flex"; // Show modal
+    modalImage.src = imageSrc; // Set modal image source
+    modalCaption.textContent = productName; // Set product name
+    modalDescription.textContent = productDescription; // Set product description
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById("productModal").style.display = "none";
+}
