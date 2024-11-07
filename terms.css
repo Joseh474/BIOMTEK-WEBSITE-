@@ -213,7 +213,7 @@ footer {
 }
 
 /* Medium Screens (421px to 1028px) */
-@media (min-width: 380px) and (max-width: 720px) {
+@media (min-width: 300px) and (max-width: 720px) {
     .container {
         max-width: 90%; /* Adjust container width */
         padding: 30px; /* Adjust padding */
