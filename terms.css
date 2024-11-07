@@ -181,7 +181,7 @@ footer {
 .social-icons a:hover {
     color: var(--primary-color);
 }
-/* Small Screens (up to 420px) */
+/* Small Screens (up to 400px) */
 @media (max-width: 720px) {
     .container {
         max-width: 90%; /* Adjust container width */
@@ -189,19 +189,19 @@ footer {
     }
 
     h1 {
-        font-size: 1.9rem; /* Adjust heading size */
+        font-size: 1.1rem; /* Adjust heading size */
     }
 
     h2 {
-        font-size:1.3rem; /* Adjust subheading size */
+        font-size:0.8rem; /* Adjust subheading size */
     }
 
     li{
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
     p {
-        font-size: 1rem; /* Adjust paragraph size */
+        font-size: 0.6rem; /* Adjust paragraph size */
     }
 
     button {
