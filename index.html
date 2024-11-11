@@ -11,35 +11,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
+<!-- Header Section -->
+<header>
+    <!-- Top section with logo and search bar -->
+    <div class="header-top">
         <a href="#" class="logo">
             <span class="biom">BIOM</span><span class="tek">TEK</span><br>
             <span class="global">GLOBAL</span>
         </a>
-        <ul class="navlist">
-            <li><a href="#home" class="active"><i class='bx bx-home'></i>Home</a></li>
-            <li><a href="#about"> <i class='bx bxs-user'></i>About us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#community">Community</a></li>
-            <li><a href="#events">Events</a></li>
-            <li class="dropdown-menu reveal">
-                <a href="#products">Products<i class='bx bxs-chevron-down-circle'></i></a>
-                <ul class="dropdown">
-                    <li><a href="#Operating Theatre Equipment">Theatre Equipment</a></li>
-                    <li><a href="#Laundry and CSSD Equipment">Laundry and CSSD Equipment</a></li>
-                    <li><a href="#laboratory equipment">Laboratory Equipment</a></li>
-                    <li><a href="#Radiology equipment">Imaging Equipment</a></li>
-                    <li><a href="#Dental Unit">Dental Unit</a></li>
-                    <li><a href="#Ward and Outpatient Physiotherapy">Ward and Outpatient Equipment</a></li>
-                    <li><a href="#accessiories, reagents, spare parts and consumables">Accessories</a></li>
-                </ul>
-            </li>
-            <li><a href="#contact">Contact us</a></li>
-        </ul>
-        <div class="toggle"></div>
-        <div class="bx bx-menu" id="menu-icon"></div>
-    </header>
+        
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for products..." />
+            <button onclick="searchProducts()">Search</button>
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <ul class="navlist">
+        <li><a href="#home" class="active"><i class='bx bx-home'></i>Home</a></li>
+        <li><a href="#about"><i class='bx bxs-user'></i>About us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#events">Events</a></li>
+        <li class="dropdown-menu reveal">
+            <a href="#products">Products<i class='bx bxs-chevron-down-circle'></i></a>
+            <ul class="dropdown">
+                <li><a href="#Operating Theatre Equipment">Theatre Equipment</a></li>
+                <li><a href="#Laundry and CSSD Equipment">Laundry and CSSD Equipment</a></li>
+                <li><a href="#laboratory equipment">Laboratory Equipment</a></li>
+                <li><a href="#Radiology equipment">Imaging Equipment</a></li>
+                <li><a href="#Dental Unit">Dental Unit</a></li>
+                <li><a href="#Ward and Outpatient Physiotherapy">Ward and Outpatient Equipment</a></li>
+                <li><a href="#accessiories, reagents, spare parts and consumables">Accessories</a></li>
+            </ul>
+        </li>
+        <li><a href="#contact">Contact us</a></li>
+    </ul>
+
+    <div class="toggle"></div>
+    <div class="bx bx-menu" id="menu-icon"></div>
+</header>
 
     <!-- Home Section -->
 <section class="home reveal" id="home">
@@ -96,6 +107,7 @@
     <div class="main-text">  
         <h2>Our <span>Products</span></h2>
         <h2>Operating Theatre Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
     </div>
     <div class="product-content">
         <div class="row" onclick="showModal('OPERATING TABLE 2.jpg', 'Operating Table', 'Used to position patients during surgical procedures to ensure optimal access for surgeons.')">
@@ -131,6 +143,7 @@
 <section class="laboratory equipments reveal" id="laboratory equipment">
     <div class="main-text">  
         <h2>Laboratory Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
     </div>
     <div class="product-content">
         <div class="row" onclick="showModal('MICROSCOPE 2.jpg', 'Microscope', 'Used for magnifying small objects or organisms for laboratory analysis.')">
@@ -178,6 +191,7 @@
 <section class="Laundry and CSSD Equipment reveal" id="Laundry and CSSD Equipment">
     <div class="main-text">  
         <h2>Laundry and CSSD Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
     </div>
     <div class="product-content">
         <div class="row" onclick="showModal('WASHING MACHINE.jpg', 'Washing Machine', 'Used for cleaning hospital linens and garments to maintain hygiene standards.')">
@@ -190,6 +204,16 @@
             <h5>Autoclave</h5>
             <a target="_blank" href="https://wa.me/+254745284565" class="inquire-btn">Inquire </a>
         </div>
+        <div class="row" onclick="showModal('pressure .jpg', 'Pressure steam steralizer', '')">
+            <img src="pressure .jpg" alt="Washing Machine">
+            <h5>Pressure steam sterilizer </h5>
+            <a target="_blank" href="https://wa.me/+254745284565" class="inquire-btn">Inquire </a>
+        </div>
+        <div class="row" onclick="showModal('bench top auto.jpg', 'Bench-top Autoclave', 'Used for sterilizing medical instruments by using high-pressure steam.')">
+            <img src="bench top auto.jpg" alt="Autoclave">
+            <h5>Bench-top Autoclave</h5>
+            <a target="_blank" href="https://wa.me/+254745284565" class="inquire-btn">Inquire </a>
+        </div>
     </div>
 </section>
 
@@ -198,6 +222,7 @@
 <section class="ward-outpatient-physiotherapy reveal" id="ward-outpatient-physiotherapy">
     <div class="main-text">  
         <h2>Medical Furniture, Ward, Outpatient, and Physiotherapy</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
     </div>
     <div class="product-content">
         <div class="row" onclick="showModal('oxygen cons.jpg', 'Oxygen Concentrator', 'Provides oxygen therapy to patients with respiratory issues to maintain adequate oxygen levels.')">
@@ -234,7 +259,7 @@
 <section class="critical-care-equipment reveal" id="critical-care-equipment">
     <div class="main-text">  
         <h2>Critical Care Equipment</h2>
-        <p>is you are unable to find your refference contanct us with your specific inquiry</p>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
     </div>
     <div class="product-content">
         <div class="row" onclick="showModal('vent2.jpg', 'Ventilator', 'Assists or replaces a patient\'s breathing function by providing controlled airflow to their lungs.')">
@@ -321,16 +346,30 @@
             <h3>Events-</h3>
             <p>We proudly host and organize hands-on workshop and summits for proffessionals and students</p>
         </div>
+       
         <div class="maintenance-services">
+            
             <div class="text-content">
                 <h3>Medical Equipment Maintenance Services</h3>
-                <p>At Biomtek, we are committed to excellence in medical equipment maintenance.</p>
-                <p>With a reputation for reliability, our technicians are skilled to perform these services.</p>
-                <p>We support hospitals, clinics, and healthcare facilities with medical device installation, repairs, preventive maintenance, and full servicing. Get in touch today.</p>
-               
+                <p>With a team of engineer and certified technicians, biomtek is equiped to handle broad range of medical equipment maintainance </p>
+                <p>We offer the following services;</p>
+                
+                 <strong>
+                    <ol>
+                        <li>1.  Corrective repairs</li>
+                        <li>2.  Preventive maintainance</li>
+                        <li>3.  Refurbishment and upgrading medical equipment with implemantation of quality and safety standards</li>
+                    </ol>
+                  </strong>
+
+                  <br><br><br>
+
+                  <p>Contact us to learn how we can support your hospital maintanance requirement.</p>
             </div>
             <div class="image-content">
-                <img src="bckgrd2.jpg" alt="Medical Equipment Maintenance" />
+                <img src="service 2.jpg" alt="Medical Equipment Maintenance" />
+               
+
             </div>
             
         </div>
