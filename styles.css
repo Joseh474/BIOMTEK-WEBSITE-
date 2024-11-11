@@ -1463,7 +1463,7 @@ header.sticky {
 }
 
 /* Additional Media Queries for Larger Screens */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 480px) {
     .product-content {
         grid-template-columns: repeat(3, 1fr); /* Three products per row */
     }
@@ -1498,7 +1498,7 @@ header.sticky {
 }
 
 /* Sidebar styles for smaller screens */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .navlist {
        
         flex-direction: column;
@@ -1560,7 +1560,7 @@ header.sticky {
 /* Media Queries */
 
 /* Styles for large tablets and small desktops */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 1200px) {
     .services {
         padding: 40px 10%; /* Adjust padding */
     }
@@ -1577,7 +1577,7 @@ header.sticky {
 }
 
 /* Styles for tablets */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 992px) {
     .services h2 {
         font-size: 1.8rem; /* Adjust heading size */
     }
@@ -1592,7 +1592,7 @@ header.sticky {
 }
 
 /* Styles for small tablets and large phones */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .services {
         padding: 30px 5%; /* Adjust padding */
     }
@@ -1611,7 +1611,7 @@ header.sticky {
 }
 
 /* Styles for phones */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 576px) {
     .services {
         padding: 20px 2%; /* Adjust padding */
     }
@@ -1630,7 +1630,7 @@ header.sticky {
 }
 
 /* Styles for very small phones */
-@media (min-width: 300px) and (max-width: 768px){
+@media (max-width: 480px) {
     .services {
         padding: 15px 1%; /* Adjust padding */
     }
@@ -1663,7 +1663,7 @@ header.sticky {
 }
 
 /* Small Devices (up to 576px) */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 576px) {
     .expand-sales {
         padding: 30px 5%; /* Adjust padding for smaller screens */
     }
@@ -1682,7 +1682,7 @@ header.sticky {
 }
 
 /* Medium Devices (577px to 768px) */
-@media (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 577px) and (max-width: 768px) {
     .expand-sales {
         padding: 40px 10%; /* Adjust padding for medium screens */
     }
@@ -1701,7 +1701,7 @@ header.sticky {
 }
 
 /* Large Devices (769px and above) */
-@media  (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 769px) {
     .expand-sales {
         padding: 60px 15%; /* Default padding for larger screens */
     }
