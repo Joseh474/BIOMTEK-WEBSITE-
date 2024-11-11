@@ -23,6 +23,23 @@ const products = [
     // Add more products here
 ];
 
+
+// search bar
+
+function searchProducts() {
+    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+    const products = document.querySelectorAll('.dropdown li a'); // Assuming products are in dropdown list
+    
+    products.forEach(product => {
+        const productName = product.textContent.toLowerCase();
+        if (productName.includes(searchTerm)) {
+            product.parentElement.style.display = "block"; // Show matching product
+        } else {
+            product.parentElement.style.display = "none"; // Hide non-matching product
+        }
+    });
+}
+
 // Sticky Header
 window.addEventListener("scroll", () => {
     header.classList.toggle("sticky", window.scrollY > 100);
