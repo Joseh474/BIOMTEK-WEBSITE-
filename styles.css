@@ -1776,5 +1776,30 @@ header.sticky {
 
 
 
+/* Responsive Breakpoint: Screen width from 300px up to 1020px */
+@media (max-width: 1020px) {
+
+    
+
+    /* Stack the search container below the logo */
+    .search-container {
+        width: 150%;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust search input and button for smaller screens */
+    .search-container input[type="text"] {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .search-container button {
+        padding: 1px;
+        width: 50%;
+    }
+
+
+}
+
 
     
