@@ -9,8 +9,8 @@
 }
 
 :root{
-    --bg-color:  linear-gradient(to bottom, #ffffff, #f5f5f5);
-    --second-bg-color:linear-gradient(to bottom, #ffffff, #f5f5f5);
+    --bg-color:  linear-gradient(to bottom, #b4c8d1, #d5d6bf);
+    --second-bg-color:   linear-gradient(to bottom, #b4c8d1, #d5d6bf);
     --third-bg-color:rgb(25, 141, 177);
     --text-color:#0c08ff;
     --second-color:#0a0101;
@@ -22,6 +22,9 @@
     --forth-bg-color:rgb(66, 61, 61);
    
 
+}
+section{
+    background-color: var(--bg-color);
 }
 
 
@@ -46,7 +49,7 @@ header {
     right: 0;
     z-index: 1000;
     display: inline-flex;
-    align-items: center;
+   
     justify-content: space-between;
     border-bottom: 1px solid transparent;
     padding: 12px 12%;
@@ -91,16 +94,18 @@ span {
     display: inline-flex;
     list-style: none;
     align-items: right;
+   
 }
 
 .navlist a {
     color:rgb(5, 9, 236);
     font-size: 16px;
     font-weight: 500;
-    margin: 0 40px;
+    margin: 0 20px;
     transition: all .45s ease;
-    padding: 5px;
+    padding:1px;
     border-radius: 7px;
+    top: 40px;
 }
 
 
@@ -394,9 +399,9 @@ h2{
 
 .custom-alert {
     position: absolute;
-    top: 20px; /* Position from the top */
+    top: 20px; 
     left: 50%;
-    transform: translateX(-50%); /* Center the alert */
+    transform: translateX(-50%); 
     background-color: #f8d7da; /* Light red background */
     color: #721c24; /* Dark red text */
     padding: 15px;
@@ -431,6 +436,41 @@ header.sticky {
     border-bottom: 1px solid #ffffff1a;
     padding: 12px 15%;
 }
+
+
+/* Styling for Search Bar Section */
+.search-container {
+    width: 100%;
+    top: 40px;
+    padding: 1px 0; /* Add padding to match header padding */
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #e0e0e0; /* Optional border to separate search bar */
+}
+
+.search-container input[type="text"] {
+    width: 100%; /* Adjust width of input to fit within the container */
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 8px 12px;
+    background-color: var(--second-main-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #003366; /* Darker color for hover effect */
+}
+
 
 
 #about {
@@ -779,11 +819,13 @@ header.sticky {
     flex: 1; /* Allow image content to take available space */
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center the image */
+    height: 600px;
+
 }
 
 .image-content img {
-    max-width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 50%; /* Make image responsive */
+    height: 0; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners for the image */
 }
 
