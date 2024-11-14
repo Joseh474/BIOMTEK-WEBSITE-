@@ -126,42 +126,34 @@ dropdownMenu.addEventListener('mouseleave', () => {
     setTimeout(() => dropdown.style.display = 'none', 500);
 });
 
-// Modal Functionality
-function openModal(imgElement, productIndex) {
-    const modal = document.getElementById("imageModal");
-    const modalTitle = document.getElementById("modal-title");
-    const currentProduct = products[productIndex];
+// Function to show the modal with product details
+function showModal(imageSrc, productName, productDescription) {
+    const modal = document.getElementById("productModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
+    const modalDescription = document.getElementById("modalDescription");
 
-    modal.style.display = "block";
-    modalTitle.textContent = currentProduct.name;
+    modal.style.display = "flex"; // Show modal
+    modalImage.src = imageSrc; // Set modal image source
+    modalCaption.textContent = productName; // Set product name
+    modalDescription.textContent = productDescription; // Set product description
 
-    const modalBody = document.querySelector('.modal-body');
-    modalBody.innerHTML = `
-        <button class="nav-btn prev-btn" onclick="changeImage(-1, ${productIndex})">❮</button>
-        <img id="modal-image" src="${imgElement.src}" alt="${currentProduct.name}">
-        <button class="nav-btn next-btn" onclick="changeImage(1, ${productIndex})">❯</button>
-    `;
-
-    currentImageIndex = currentProduct.images.indexOf(imgElement.src.split('/').pop());
-    toggleScrollLock();
+    // Add scroll event listener to close modal
+    window.addEventListener('scroll', closeModal);
 }
 
-function changeImage(direction, productIndex) {
-    const currentProduct = products[productIndex];
-    const modalImg = document.getElementById("modal-image");
-
-    currentImageIndex = (currentImageIndex + direction + currentProduct.images.length) % currentProduct.images.length;
-    modalImg.src = currentProduct.images[currentImageIndex];
-}
-
+// Close modal function
 function closeModal() {
-    document.getElementById("imageModal").style.display = "none";
-    toggleScrollLock();
+    const modal = document.getElementById("productModal");
+    modal.style.display = "none"; // Hide the modal
+
+    // Remove scroll event listener to prevent multiple calls
+    window.removeEventListener('scroll', closeModal);
 }
 
-function toggleScrollLock() {
-    document.body.classList.toggle('scroll-lock');
-}
+// Event listener for the close button
+const closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', closeModal);
 
 // WhatsApp Functionality
 function openWhatsApp(productName) {
@@ -215,7 +207,19 @@ function showModal(imageSrc, productName, productDescription) {
     modalDescription.textContent = productDescription; // Set product description
 }
 
-// Function to close the modal
-function closeModal() {
-    document.getElementById("productModal").style.display = "none";
+const brandsContainer = document.getElementById('brandsContainer');
+let position = window.innerWidth; // Start position off-screen to the right
+
+function animateBrands() {
+    position -= 2; // Move left by 2 pixels
+    if (position < -brandsContainer.offsetWidth) {
+        position = window.innerWidth; // Reset position to start again
+    }
+    brandsContainer.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animateBrands); // Call the function again for the next frame
 }
+
+// Start the animation
+animateBrands();
+
+
